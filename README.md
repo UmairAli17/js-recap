@@ -1,6 +1,6 @@
 # Instructions for running CHT2531 JavaScript Exercises
 
-1. From unilearn download the practical.zip folder. 
+1. Download or clone the repository.
 2. Unzip this.
 3. Inside this folder there are a number of files. Here are the ones we are interested in:
 
