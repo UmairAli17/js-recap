@@ -14,16 +14,11 @@ films.push(new Film("Back to the Future","1985"));
 /*
 Q1) Add some JavaScript that will put focus on the search text box when the page loads
 */
-var searchBox=document.querySelector("#search");
-searchBox.focus();
-searchBox.addEventListener("keyup",doSearch,false)
+
 /*
 Q2) Write function called doSearch(). At the moment it doesn't matter what this function does. 
 */
-function doSearch(){
-	var msg=document.querySelector("#msg");
-	msg.textContent="You didn't enter anything";
-}
+
 /*
 Q3) Modify the function so that when called, it displays "You didn't enter anything" in the <div id="msg"> element. You will need to use the exact text in order to pass the test. 
 */

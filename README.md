@@ -1,4 +1,4 @@
-# Instructions for running CHT2531 Exercises - Week 1
+# Instructions for running CHT2531 JavaScript Exercises
 
 1. From unilearn download the practical.zip folder. 
 2. Unzip this.
