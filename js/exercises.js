@@ -3,7 +3,7 @@ function Film(title, year)
 	this.title=title;
 	this.year=year;
 }
-var films=[]
+var films=[];
 films.push(new Film("No Country for Old Men","2007"));
 films.push(new Film("Jaws","1975"));
 films.push(new Film("Winter's Bone","2010"));
@@ -15,17 +15,57 @@ films.push(new Film("Back to the Future","1985"));
 Q1) Add some JavaScript that will put focus on the search text box when the page loads
 */
 
+var searchBox = document.querySelector('#search');
+searchBox.focus();
+searchBox.addEventListener("keyup", doSearch, false);
+var msg = document.querySelector('#msg');
+
+var output = document.querySelector('#film-list');
+
+
 /*
 Q2) Write function called doSearch(). At the moment it doesn't matter what this function does. 
 */
 
+
 /*
 Q3) Modify the function so that when called, it displays "You didn't enter anything" in the <div id="msg"> element. You will need to use the exact text in order to pass the test. 
 */
+//
+//function doSearch(){
+//      
+//        msg.innerHTML = "You didn't enter anything";
+//        
+//    
+//}
+//doSearch();
 
 /*
 Q4) Make function doSearch() run whenever the user types into the search box ( <input id="search"> )i.e. run doSearch() in response to keyUp events.
 */
+
+function doSearch(evnt){
+    var results = [];
+
+    if(searchBox.value == '' && evnt.keyCode==13)
+    {   
+        console.log(searchBox.value);
+        msg.innerHTML = "You didn't enter anything";
+    }
+    else if(searchBox.value != '')
+    {
+        for(var i=0;i<films.length;i++){
+            var filmsList = films[i];
+            if(filmsList["title"].indexOf(searchBox.value)!=-1)
+            {
+                //The following will successfully output the title of the film as long as it exists
+                results.push(filmsList["title"]);
+                output.innerHTML = results;
+                console.log(results); //should output the title along with the year
+            }
+        }
+    }
+}
 
 /*
 Q5) Modify the function doSearch(), it should only display the "You didn't enter anything" message if the user has pressed the Enter key. For now, if the user presses any other key <div id="msg"> should be empty. 
